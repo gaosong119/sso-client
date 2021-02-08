@@ -20,7 +20,7 @@ import java.util.Map;
  * @Author: gaosong
  * @Date 2021/1/29 10:50
  */
-@WebFilter(filterName = "LogoutFilter", urlPatterns = "/*",
+@WebFilter(filterName = "LogoutFilter", urlPatterns = "/logout",
         initParams = {@WebInitParam(name = "logoutUrl",value = "http://localhost:8080/logout")})
 public class LogoutFilter implements Filter {
     /**filter配置对象*/
@@ -28,6 +28,7 @@ public class LogoutFilter implements Filter {
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
+        System.out.println("进入注销filter");
         config = filterConfig;
     }
 
